@@ -3,4 +3,8 @@
 
 <display>
 	
+	<category name="category.test">
+		<portlet id="shop-management"></portlet>
+		<portlet id="staff-management"></portlet>
+	</category>
 </display>
