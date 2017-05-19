@@ -1,0 +1,5 @@
+Example:
+https://github.com/liferay/liferay-docs/branches/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/message-bus-03-async-send-forget-insults-portlet
+
+Tutorial
+http://www.apoorvaprakash.in/2014/08/liferay-note-of-asynchronous-message-bus.html

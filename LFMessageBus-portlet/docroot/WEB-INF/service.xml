@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.vh">
+	<author>friendship</author>
+	<namespace>shop</namespace>
+
+	<entity name="Shop" local-service="true" remote-service="false" table="vh_shop">
+
+		<!-- PK fields -->
+
+		<column name="ShopId" type="long" primary="true" db-name="shopid"/>
+		<column name="ShopName" type="String" db-name="name"/>
+		<column name="ShopAddress" type="String" db-name="address"/>
+		
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="ShopName" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="ShopName" return-type="Collection">
+			<finder-column name="ShopName" />
+		</finder>
+	</entity>
+	
+	<entity name="Staff" local-service="true" remote-service="false" table="vh_staff" >
+		<column name="StaffId"			db-name="staffid" type="long" primary="true"></column>
+		<column name="name"				db-name="name" type="String"></column>
+		<column name="email"			db-name="email" type="String"></column>
+		<column name="phone"			db-name="phone" type="String"></column>
+		<column name="shopid"			db-name="shopid" type="long"></column>
+		<column name="delFlg"			db-name="delflg" type="int"></column>
+	</entity>
+	
+</service-builder>
