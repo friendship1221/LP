@@ -3,13 +3,12 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	
 	<portlet>
-		<portlet-name>shop-
-</portlet-name>
+		<portlet-name>shop-management</portlet-name>
 		<display-name>Shop Management</display-name>
-		<portlet-class>com.vh.shop.ShopManagement</portlet-class>
+		<portlet-class>com.vh.portlet.shop.ShopManagement</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/shopmanagement/view.jsp</value>
+			<value>/html/shop/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -37,10 +36,10 @@
 	<portlet>
 		<portlet-name>staff-management</portlet-name>
 		<display-name>Staff Management</display-name>
-		<portlet-class>com.vh.staff.StaffManagement</portlet-class>
+		<portlet-class>com.vh.portlet.staff.StaffManagement</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/staffmanagement/view.jsp</value>
+			<value>/html/staff/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
@@ -50,6 +49,68 @@
 		<portlet-info>
 			<title>Staff Management</title>
 			<short-title>Staff Management</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>weather</portlet-name>
+		<display-name>Weather</display-name>
+		<portlet-class>com.vh.portlet.weather.WeatherManagement</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/weather/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Weather</title>
+			<short-title>Weather</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>exchange-rate-management</portlet-name>
+		<display-name>Exchange Rate Management</display-name>
+		<portlet-class>com.vh.portlet.exchangerate.ExchangeRateManagement</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/exchangerate/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Exchange Rate Management</title>
+			<short-title>Exchange Rate Management</short-title>
 			<keywords></keywords>
 		</portlet-info>
 		<security-role-ref>
