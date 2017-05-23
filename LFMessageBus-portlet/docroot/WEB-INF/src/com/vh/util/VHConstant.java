@@ -17,5 +17,6 @@ public class VHConstant {
 		
 		final static String VALUE_DEFAULT = "default";
 		
+		final static String DESTINATION_INFO = "shop/info";
 	}
 }

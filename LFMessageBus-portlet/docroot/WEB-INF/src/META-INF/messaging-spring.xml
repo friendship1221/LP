@@ -7,14 +7,14 @@
 	<!-- Listeners -->
 
 	<bean id="messageListener.weather_listener"
-		class="com.vh.portlet.insults.messaging.impl.InsultLogMessagingImpl" />
+		class="com.vh.portlet.weather.WeatherMessagingImpl" />
 	<bean id="messageListener.exchangerate_listener"
-		class="com.insults.portlet.insults.messaging.impl.InsultedMessagingImpl" />
+		class="com.insults.portlet.exchangerate.ExchangeRateMessagingImpl" />
 
 	<!-- Destinations -->
 	
-	<bean id="insults.users" class="com.liferay.portal.kernel.messaging.ParallelDestination">
-		<property name="name" value="insults/users" />
+	<bean id="shop.info" class="com.liferay.portal.kernel.messaging.ParallelDestination">
+		<property name="name" value="shop/info" />
 	</bean>
 
 	<!-- Configurator -->
@@ -23,17 +23,17 @@
 		class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
 		<property name="messageListeners">
 			<map key-type="java.lang.String" value-type="java.util.List">
-				<entry key="insults/users">
+				<entry key="shop/info">
 					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-						<ref bean="messageListener.insultlog_listener" />
-						<ref bean="messageListener.insulted_listener" />
+						<ref bean="messageListener.weather_listener" />
+						<ref bean="messageListener.exchangerate_listener" />
 					</list>
 				</entry>
 			</map>
 		</property>
 		<property name="destinations">
 			<list>
-				<ref bean="insults.users" />
+				<ref bean="shop.info" />
 			</list>
 		</property>
 	</bean>

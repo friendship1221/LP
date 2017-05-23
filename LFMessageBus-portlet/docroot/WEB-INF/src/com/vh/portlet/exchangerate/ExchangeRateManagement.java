@@ -1,4 +1,4 @@
-package com.vh;
+package com.vh.portlet.exchangerate;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 

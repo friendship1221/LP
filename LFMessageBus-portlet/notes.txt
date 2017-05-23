@@ -3,3 +3,18 @@ https://github.com/liferay/liferay-docs/branches/6.2.x/develop/tutorials/code/tu
 
 Tutorial
 http://www.apoorvaprakash.in/2014/08/liferay-note-of-asynchronous-message-bus.html
+
+
+Concept:
+	Message bus like tunnel between two or more different nodes there we register all destinations each destination have multiple listeners to receive messages.
+We can say massage bus is responsible to transfer messages from message senders to message listeners.
+
+Step 1:  /src/META-INF/messaging-spring.xml
+What is it?
+It define:
+	Listeners
+		
+	Destinations
+		
+	Configuarations
+		

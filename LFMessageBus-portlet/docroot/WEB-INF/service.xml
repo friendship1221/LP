@@ -22,14 +22,31 @@
 			<finder-column name="ShopName" />
 		</finder>
 	</entity>
-	
+	<!--
 	<entity name="Staff" local-service="true" remote-service="false" table="vh_staff" >
 		<column name="StaffId"			db-name="staffid" type="long" primary="true"></column>
-		<column name="name"				db-name="name" type="String"></column>
-		<column name="email"			db-name="email" type="String"></column>
-		<column name="phone"			db-name="phone" type="String"></column>
-		<column name="shopid"			db-name="shopid" type="long"></column>
-		<column name="delFlg"			db-name="delflg" type="int"></column>
+		<column name="Name"				db-name="name" type="String"></column>
+		<column name="Email"			db-name="email" type="String"></column>
+		<column name="Phone"			db-name="phone" type="String"></column>
+		<column name="Shopid"			db-name="shopid" type="long"></column>
+		<column name="DelFlg"			db-name="delflg" type="int"></column>
+	</entity>
+	-->
+	<entity name="Weather" local-service="true" remote-service="false" table="vh_weather" >
+		<column name="UUID"				db-name="uuid" type="String" primary="true"></column>
+		<column name="Region"			db-name="region" type="String"></column>
+		<column name="City"				db-name="city" type="String"></column>
+		<column name="Description"		db-name="email" type="String"></column>
+		<column name="Date"				db-name="shopid" type="Date"></column>
+		<column name="Source"			db-name="source" type="String"></column>
 	</entity>
 	
+	<entity name="ExchangeRate" local-service="true" remote-service="false" table="vh_exchangerate" >
+		<column name="UUID"				db-name="uuid" type="String" primary="true"></column>
+		<column name="Stock"			db-name="name" type="String"></column>
+		<column name="StockValue"		db-name="email" type="String"></column>
+		<column name="Phone"			db-name="phone" type="String"></column>
+		<column name="Date"				db-name="shopid" type="Date"></column>
+		<column name="Source"			db-name="source" type="String"></column>
+	</entity>
 </service-builder>

@@ -1,4 +1,4 @@
-package com.vh.weather;
+package com.vh.portlet.weather;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
