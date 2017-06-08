@@ -18,3 +18,13 @@ It define:
 		
 	Configuarations
 		
+Step 2:
+Portlet senders
+	Shop senders
+	
+Step 3:
+Portlet receive
+	Weather 
+	Exchange Rate
+	
+
