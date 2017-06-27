@@ -2,4 +2,9 @@
 
 <portlet:defineObjects />
 
-This is the <b>Weather</b> portlet in View mode.
+<portlet:actionURL name="sendWeatherInfor" var="sendWeatherInforURL">
+</portlet:actionURL>
+
+<form action="<%=sendWeatherInforURL%>" method="post" id="sendWeatherInfor">
+<input type="submit" value="Send Weather Infor"></input>
+</form>

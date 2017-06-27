@@ -5,35 +5,34 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<!-- Listeners -->
-
-	<bean id="messageListener.weather_listener"
-		class="com.vh.portlet.weather.WeatherMessagingImpl" />
-	<bean id="messageListener.exchangerate_listener"
-		class="com.insults.portlet.exchangerate.ExchangeRateMessagingImpl" />
+	<bean id="messageListener.staff_listener"
+		class="com.vh.portlet.staff.StaffMessagingImpl" />
+	
+	<bean id="messageListener.shop_listener"
+		class="com.vh.portlet.shop.ShopMessagingImpl" />
 
 	<!-- Destinations -->
-	
-	<bean id="shop.info" class="com.liferay.portal.kernel.messaging.ParallelDestination">
-		<property name="name" value="shop/info" />
+	<!-- com.liferay.portal.kernel.messaging.SerialDestination -->
+	<bean id="message.info" class="com.liferay.portal.kernel.messaging.ParallelDestination">
+		<property name="name" value="message/info" />
 	</bean>
 
 	<!-- Configurator -->
-	
 	<bean id="messagingConfigurator"
 		class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
 		<property name="messageListeners">
 			<map key-type="java.lang.String" value-type="java.util.List">
-				<entry key="shop/info">
+				<entry key="message/info">
 					<list value-type="com.liferay.portal.kernel.messaging.MessageListener">
-						<ref bean="messageListener.weather_listener" />
-						<ref bean="messageListener.exchangerate_listener" />
+						<ref bean="messageListener.staff_listener" />
+						<ref bean="messageListener.shop_listener" />
 					</list>
 				</entry>
 			</map>
 		</property>
 		<property name="destinations">
 			<list>
-				<ref bean="shop.info" />
+				<ref bean="message.info" />
 			</list>
 		</property>
 	</bean>

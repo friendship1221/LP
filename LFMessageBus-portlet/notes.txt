@@ -18,13 +18,14 @@ It define:
 		
 	Configuarations
 		
+
 Step 2:
-Portlet senders
-	Shop senders
-	
+Make entry of "/src/META-INF/messaging-spring.xml" in "docroot\WEB-INF\web.xml"
+
+
 Step 3:
 Portlet receive
 	Weather 
 	Exchange Rate
 	
-
+	Timer: 180s, send information to message-bus

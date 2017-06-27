@@ -17,6 +17,11 @@ public class VHConstant {
 		
 		final static String VALUE_DEFAULT = "default";
 		
-		final static String DESTINATION_INFO = "shop/info";
+		final static String DESTINATION_INFO = "message/info";
+	}
+	
+	public interface MSG_WEATHER{
+		final static String WEATHER_HUMID = "humid";
+		final static String WEATHER_TEMPERATER = "temperature";
 	}
 }
