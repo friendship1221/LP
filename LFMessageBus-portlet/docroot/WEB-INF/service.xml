@@ -4,13 +4,14 @@
 	<author>friendship</author>
 	<namespace>shop</namespace>
 
-	<entity name="Shop" local-service="true" remote-service="false" table="vh_shop">
+	<entity name="Shop" local-service="true" remote-service="false" table="vh_shop"
+		data-source="postgresSource" cache-enabled="false">
 
 		<!-- PK fields -->
-
 		<column name="ShopId" type="long" primary="true" db-name="shopid"/>
 		<column name="ShopName" type="String" db-name="name"/>
 		<column name="ShopAddress" type="String" db-name="address"/>
+		<column name="AllowEditing" type="int" db-name="allowediting"/>
 		
 		<!-- Order -->
 		<order by="asc">
@@ -23,7 +24,8 @@
 		</finder>
 	</entity>
 	<!--
-	<entity name="Staff" local-service="true" remote-service="false" table="vh_staff" >
+	<entity name="Staff" local-service="true" remote-service="false" table="vh_staff" 
+		data-source="postgresSource" cache-enabled="false">
 		<column name="StaffId"			db-name="staffid" type="long" primary="true"></column>
 		<column name="Name"				db-name="name" type="String"></column>
 		<column name="Email"			db-name="email" type="String"></column>
@@ -32,7 +34,8 @@
 		<column name="DelFlg"			db-name="delflg" type="int"></column>
 	</entity>
 	-->
-	<entity name="Weather" local-service="true" remote-service="false" table="vh_weather" >
+	<entity name="Weather" local-service="true" remote-service="false" table="vh_weather" 
+		data-source="postgresSource" cache-enabled="false">
 		<column name="UUID"				db-name="uuid" type="String" primary="true"></column>
 		<column name="Region"			db-name="region" type="String"></column>
 		<column name="City"				db-name="city" type="String"></column>
@@ -41,7 +44,8 @@
 		<column name="Source"			db-name="source" type="String"></column>
 	</entity>
 	
-	<entity name="ExchangeRate" local-service="true" remote-service="false" table="vh_exchangerate" >
+	<entity name="ExchangeRate" local-service="true" remote-service="false" table="vh_exchangerate"
+		data-source="postgresSource" cache-enabled="false">
 		<column name="UUID"				db-name="uuid" type="String" primary="true"></column>
 		<column name="Stock"			db-name="name" type="String"></column>
 		<column name="StockValue"		db-name="email" type="String"></column>

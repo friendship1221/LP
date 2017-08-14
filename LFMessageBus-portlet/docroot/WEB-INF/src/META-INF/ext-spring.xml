@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<beans
+ default-destroy-method="destroy"
+ default-init-method="afterPropertiesSet"
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+    <bean id="postgresSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+        <property name="targetDataSource">
+            <bean class="com.liferay.portal.dao.jdbc.util.DataSourceFactoryBean">
+                <property name="propertyPrefix" value="jdbc.postgres." />
+            </bean>
+        </property>
+    </bean>
+    <bean id="noDatasource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+            <property name="targetDataSource">
+                <ref bean="postgresSource" />
+            </property>
+    </bean>
+    
+</beans>
