@@ -26,7 +26,7 @@ public class VHConstant {
 	}
 	
 	public interface LiferayConst {
-		final String JSP_PAGE = "JSP_PAGE";
+		final String JSP_PAGE = "jspPage";
 		final int DELTA_PAGE = 20;
 	}
 	

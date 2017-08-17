@@ -1,3 +1,4 @@
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
 <%@page import="javax.portlet.ActionRequest"%>
 <%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
 <%@page import="com.vh.service.ShopLocalServiceUtil"%>
@@ -59,7 +60,7 @@ iteratorShopURL.setWindowState(LiferayWindowState.NORMAL);
 		iteratorURL="<%=iteratorShopURL%>" emptyResultsMessage="there-are-no-results">
 		<liferay-ui:search-container-results
 			results="<%=ShopLocalServiceUtil.searchShop(shopName, shopAddress, 
-					serachContainer.getStart(), searchContainer.getEnd())%>"
+					searchContainter.getStart(), searchContainter.getEnd())%>"
 			total="<%=ShopLocalServiceUtil.countShop(shopName, shopAddress) %>">
 			</liferay-ui:search-container-results>
 
@@ -84,19 +85,19 @@ iteratorShopURL.setWindowState(LiferayWindowState.NORMAL);
 	</liferay-ui:search-container>
 </div>
 
-<aui:script>
+<script type="text/javascript">
 function clickUpdateShop(idShop){
 	
 	$.ajax({
 		async: false, //blocks window close
 		type: "POST",
-		dataType : "html",
+		dataType : "json",
 		url : "${checkAllowEditURL}",
-		data: {"idShop":idShop}, 
+		data: {"idShop":idShop,}, 
 		success : function(result) {
 			if(result.isAllowEdit){
 				location.href = "${updateShopURL}" 
-					+ "&_lienthongmanagement_WAR_uniofficeportlet_vanBanLTId=345314e6c8b3c2d170a16295186d8509";
+					+ "&_shopmanagement_WAR_LFMessageBusportlet_idShop=" + idShop;
 			}
 			else{
 				// inform
@@ -117,4 +118,4 @@ function clickUpdateShop(idShop){
 	});
 }// end function clickUpdateShop
 
-</aui:script>
+</script>

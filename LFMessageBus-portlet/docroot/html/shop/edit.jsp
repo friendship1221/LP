@@ -32,5 +32,5 @@ Shop shop = (Shop) GetterUtil.getObject(request.getAttribute("shop"), null);
 			<aui:button type="submit" name="save" value="save"></aui:button>
 		</aui:form>
 	</c:otherwise>
-	<aui:button name="back" value="back" onclick="history.go(-1)" />
 </c:choose>
+<aui:button name="back" value="back" onclick="history.go(-1)" />

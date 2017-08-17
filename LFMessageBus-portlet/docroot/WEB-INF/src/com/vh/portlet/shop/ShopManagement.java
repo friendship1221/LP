@@ -13,12 +13,15 @@ import javax.portlet.ResourceResponse;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
 import com.vh.model.Shop;
 import com.vh.service.ShopLocalServiceUtil;
 //import com.liferay.portal.kernel.messaging.Message;
 //import com.liferay.portal.kernel.messaging.MessageBusUtil;
 import com.vh.util.BaseMVCPortlet;
+import com.vh.util.UniParamUtil;
 //import com.vh.util.VHConstant;
 import com.vh.util.VHConstant;
 
@@ -55,6 +58,7 @@ public class ShopManagement extends BaseMVCPortlet {
 	public void updateShop(ActionRequest actReq, ActionResponse actRes){
 		long idShop = GetterUtil.getLong(actReq.getParameter("idShop"), 0);
 		Shop shop = null;
+		_log.info("updateShop" + String.valueOf(idShop));
 
 		try {
 			shop = ShopLocalServiceUtil.fetchShop(idShop);
@@ -68,11 +72,16 @@ public class ShopManagement extends BaseMVCPortlet {
 	public void checkAllowEdit(ResourceRequest resourceReq, ResourceResponse resourceRes){
 		boolean isAllowEdit = false;
 		long idShop = GetterUtil.getLong(resourceReq.getParameter("idShop"), 0);
+		_log.info("checkAllowEdit_Getter" + String.valueOf(idShop));
+		if(0 == idShop)
+			idShop = UniParamUtil.getLong(resourceReq, "idShop", 0);
 		Shop shop = null;
+		_log.info("checkAllowEdit_UniPraram" + String.valueOf(idShop));
 
 		try {
 			shop = ShopLocalServiceUtil.fetchShop(idShop);
 			isAllowEdit = shop.getAllowEditing() > 0;
+			_log.info("isAllowEdit" + isAllowEdit);
 		} catch (SystemException e) {
 			e.printStackTrace();
 		}
@@ -85,4 +94,5 @@ public class ShopManagement extends BaseMVCPortlet {
 			e.printStackTrace();
 		}
 	}
+	private static Log _log = LogFactoryUtil.getLog(ShopManagement.class);
 }
